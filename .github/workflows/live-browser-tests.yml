@@ -4,6 +4,7 @@ on:
     paths:
       - "mouselatch/**"
       - "tests/**"
+      - "verification/**"
       - ".github/workflows/live-browser-tests.yml"
   workflow_dispatch:
 permissions:
@@ -21,6 +22,8 @@ jobs:
           python3 -m pip install --user -r requirements.txt
       - name: Test formal reference state model
         run: python3 -m unittest discover -s tests -p 'test_formal_model.py' -v
+      - name: Exhaustively check finite reference model
+        run: python3 verification/exhaustive_model_check.py
       - name: Test real public slider / draggable / droppable pages
         run: python3 tests/live_public_demos.py
       - name: Preserve raw screenshots and JSON
