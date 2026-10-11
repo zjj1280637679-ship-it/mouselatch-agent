@@ -1,0 +1,32 @@
+name: MouseLatch live public UI tests
+on:
+  push:
+    paths:
+      - "mouselatch/**"
+      - "tests/**"
+      - ".github/workflows/live-browser-tests.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-public-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Chromium and Python dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq chromium
+          python3 -m pip install --user -r requirements.txt
+      - name: Test formal reference state model
+        run: python3 -m unittest discover -s tests -p 'test_formal_model.py' -v
+      - name: Test real public slider / draggable / droppable pages
+        run: python3 tests/live_public_demos.py
+      - name: Preserve raw screenshots and JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mouselatch-real-site-test-evidence
+          path: results/live/
+          retention-days: 7
