@@ -28,6 +28,8 @@ The snippet illustrates the intended API; the current code includes a reference 
 - [Scientific validation protocol](docs/VALIDATION_PROTOCOL.md) — falsification criteria, paired benchmark design, outside-webpage testing.
 - [Real public site integration tests](tests/live_public_demos.py) — separate localhost HTTP calls controlling one persistent Chromium browser against official jQuery UI **slider / draggable / droppable** demo pages.
 - [GitHub Actions runner](.github/workflows/live-browser-tests.yml) — automatically captures browser event counts, JSON reports and screenshots.
+- [Bounded exhaustive model checker](verification/exhaustive_model_check.py) — checks **24 abstract states and 192 transitions**.
+- [Verified first public web run](docs/REAL_WEB_RESULTS_2026-10-11.md) — **3/3 passed**, with separate RPCs and one actual browser mouse down/up per page.
 
 ## Run tests
 
