@@ -1,0 +1,69 @@
+{
+  "experiment": "First official jQuery UI live-web integration",
+  "executed_utc": "2026-10-11",
+  "workflow_run": "https://github.com/zjj1280637679-ship-it/mouselatch-agent/actions/runs/38109947187",
+  "runner": "GitHub-hosted Linux / Chromium / Playwright / separate localhost HTTP requests",
+  "measurement": "Independent browser-observed DOM events and DOM element x positions",
+  "trials": {
+    "slider": {
+      "url": "https://jqueryui.com/resources/demos/slider/default.html",
+      "status": "passed",
+      "down": 1,
+      "up": 1,
+      "move_events": 25,
+      "x_css_px": [
+        -0.6,
+        34.9,
+        105.8,
+        105.8
+      ],
+      "held_states": [
+        false,
+        true,
+        true,
+        false
+      ]
+    },
+    "draggable": {
+      "url": "https://jqueryui.com/resources/demos/draggable/default.html",
+      "status": "passed",
+      "down": 1,
+      "up": 1,
+      "move_events": 25,
+      "x_css_px": [
+        8,
+        46,
+        118,
+        118
+      ],
+      "held_states": [
+        false,
+        true,
+        true,
+        false
+      ]
+    },
+    "droppable": {
+      "url": "https://jqueryui.com/resources/demos/droppable/default.html",
+      "status": "passed",
+      "down": 1,
+      "up": 1,
+      "move_events": 25,
+      "x_css_px": [
+        8,
+        46,
+        171,
+        171
+      ],
+      "held_states": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "post_release_text": "Dropped!"
+    }
+  },
+  "scope_limit": "Public non-security interaction demos; not CAPTCHA, social media authentication or human-mimicry",
+  "artifact_note": "Full images and detailed snapshots are retained as a temporary Actions artifact; this summary is committed for permanence."
+}
